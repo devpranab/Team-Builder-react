@@ -4,6 +4,8 @@ import User from './components/User/User';
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [team, setTeam] = useState([]);
+
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=8")
     //fetch("https://randomuser.me/api/?result=15")
@@ -15,10 +17,18 @@ function App() {
   // function
   const addMembers = (name) => {
     console.log("member added", name);
+    setTeam([...team, name]);
   }
+
   return (
     <div className="App">
      <h1>Team Builder {users.length}</h1>
+     <ul>
+      {
+        team.map( (m) => <li>{m}</li>)
+        // team.map( (m, idx) => <li key={idx}>{m}</li>)
+      }
+     </ul>
      {
       users.map(user => <User user={user} addMembers={addMembers}></User>)
      }
@@ -27,3 +37,4 @@ function App() {
 }
 
 export default App;
+// build team and how react works

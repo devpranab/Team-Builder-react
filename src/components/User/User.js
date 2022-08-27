@@ -26,7 +26,7 @@ const showPhno = () => setMobile(phone);
         <p><a target="_blank" href={website}>Learn about me</a></p>
         <p>phone number: {mobile}</p>
         <button onClick={showPhno}>Show phone number</button>
-        <button onClick={() => addMembers(name)}>Add me</button>
+        <button onClick={() => addMembers(fullName)}>Add me</button>
       </div> 
     </div>
   );
