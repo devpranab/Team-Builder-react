@@ -11,11 +11,16 @@ function App() {
     .then(data => setUsers(data.results))
     .catch(err => console.log(err))
   }, [])
+
+  // function
+  const addMembers = (name) => {
+    console.log("member added", name);
+  }
   return (
     <div className="App">
      <h1>Team Builder {users.length}</h1>
      {
-      users.map(user => <User user={user}></User>)
+      users.map(user => <User user={user} addMembers={addMembers}></User>)
      }
     </div>
   );
