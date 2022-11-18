@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import User from './components/User/User';
+import Team from './components/Team';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -32,6 +33,8 @@ function App() {
      {
       users.map(user => <User user={user} addMembers={addMembers}></User>)
      }
+
+    <Team/>
     </div>
   );
 }
